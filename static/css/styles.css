@@ -1,0 +1,25 @@
+.card{
+    height:500px
+
+}
+
+.books .main .container .row img{
+    max-width: 540px;
+    max-height: 450px;
+    width: fit-content;
+}
+
+.books .main .container .row .content{
+    display: flex;
+    flex-direction: column;
+}
+
+.books .main .container .row .information{
+    display: flex;
+    flex-direction: column;
+    text-align:justify;
+    justify-content: center;
+}
+.info{
+    text-align: justify;
+}

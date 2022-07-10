@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="cart">
+    <div class="row">
+        <div class="col-sm-12">
+            {% if items %}
+            <div class="table-responsive">
+                <table class="table table-dark">
+                    <thead>
+                    <tr>
+                        <td scope="col">Book Id.</td>
+                        <th scope="col">Book Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Language</th>
+                        <th scope="col">Pages</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in items %}
+                    <tr>
+                        <td>{{ item.book_id }}</td>
+                        <td>{{ item.book_title }}</td>
+                        <td>{{ item.author }}</td>
+                        <td>{{ item.price }}</td>
+                        <td>{{ item.language }}</td>
+                        <td>{{ item.pages }} pages</td>
+                        <td><a class="btn btn-primary" href="{% url 'main:book-update' item.slug %}">Update</a></td>
+                        <td><a class="btn btn-danger" href="{% url 'main:book-delete' item.slug %}">Delete</a></td>
+                    </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <h4 class="text-center">Sorry, you have not ordered any item yet!!!</h4>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
